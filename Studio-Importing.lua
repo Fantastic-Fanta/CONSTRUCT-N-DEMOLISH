@@ -8,7 +8,14 @@ for _, sel in ipairs(Selection:Get()) do
 	end
 end
 
-local Parts = sel:GetChildren()
+
+for i,v in ipairs(ks:GetDescendants()) do
+	pcall(function()
+			v.Anchored = true
+		end)
+end
+local Parts = ks:GetChildren()
+
 local SupportLibrary = {};
 
 function SupportLibrary.FindTableOccurrences(Haystack, Needle)
