@@ -1304,4 +1304,12 @@ function InflateBuildData(Data)
 
 end;
 
-setclipboard(SerializeModel(Parts))
+local str = SerializeModel(Parts)
+print(str)
+local sv = workspace:FindFirstChild("Result")
+if not sv or not sv:IsA("StringValue") then
+	sv = Instance.new("StringValue")
+	sv.Name   = "Result"
+	sv.Parent = workspace
+end
+sv.Value = str
